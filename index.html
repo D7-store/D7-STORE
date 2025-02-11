@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="D7 STORE - متجر الألعاب الإلكترونية. تسوق أحدث الألعاب بأسعار مميزة.">
+    <title>D7 STORE</title>
+    <style>
+        /* التصميم العام */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a1a, #333333, #1a1a1a);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: #ffeb3b;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background-color: rgba(26, 26, 26, 0.8);
+            color: #fff;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: lightGlow 1.5s infinite alternate;
+            transition: transform 0.3s ease;
+        }
+
+        @keyframes lightGlow {
+            0% { text-shadow: 0 0 5px #ffeb3b, 0 0 15px #ffeb3b; }
+            100% { text-shadow: 0 0 10px #fff, 0 0 20px #ffeb3b; }
+        }
+
+        header:hover { transform: translateY(-5px); }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #ffeb3b;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        nav ul li { margin: 0 10px; }
+
+        nav a {
+            text-decoration: none;
+            color: #ffeb3b;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: #fff; }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(51, 51, 51, 0.9);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 0;
+                margin: 0;
+                animation: slideDown 0.5s ease;
+            }
+
+            @keyframes slideDown {
+                from { transform: translateY(-20px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+
+            nav ul.active { display: flex; }
+            .hamburger { display: block; }
+        }
+
+        footer {
+            background-color: rgba(34, 34, 34, 0.8);
+            color: #fff;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .product {
+            border: 2px solid #ffeb3b;
+            padding: 20px;
+            margin: 15px;
+            display: inline-block;
+            width: 30%;
+            background-color: rgba(68, 68, 68, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 235, 59, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover { transform: scale(1.05); }
+
+        @media (max-width: 768px) {
+            .product { width: 100%; margin: 10px 0; }
+        }
+
+        .buy-button {
+            background: #ffeb3b;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .buy-button:hover {
+            background: #ffc107;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 235, 59, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <header>D7 STORE</header>
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <nav>
+        <ul id="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+         
+		 <li><a href="about.html">من نحن</a></li>
+			
+            <li><a href="contact.html">تصل بنا</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="product">
+            <img src="images/online.jpg" alt="PC Online">
+            <h3>PC ONLINE</h3>
+            <a href="#" class="buy-button">دخول</a>
+        </div>
+        <div class="product">
+            <img src="images/offline.jpg" alt="PC Offline">
+            <h3>PC OFFLINE</h3>
+            <a href="#" class="buy-button">دخول</a>
+        </div>
+        <div class="product">
+            <img src="images/package.jpg" alt="Games Package">
+            <h3>Games Package</h3>
+            <a href="#" class="buy-button">دخول</a>
+        </div>
+    </section>
+    <footer>جميع الحقوق محفوظة &copy; 2025</footer>
+    <audio id="click-sound" src="click-sound.mp3"></audio>
+    <script>
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('click-sound').play();
+                alert('سيتم تحويلك إلى صفحة التفاصيل.');
+            });
+        });
+    </script>
+</body>
+</html>
